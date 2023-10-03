@@ -1,5 +1,6 @@
 project_id = "jonathanj-sandbox"
 region = "europe-west1"
-postgresql_db = "testing"
+db_instance_name = "sap-postgres-bigq"
+postgresql_db = "SAP_PSet"
 publication = "publication"
 replication_slot = "replication_slot"

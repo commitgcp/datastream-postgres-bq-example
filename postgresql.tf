@@ -6,7 +6,7 @@ resource "random_string" "db_password" {
 resource "google_sql_database_instance" "postgres_db" {
   project = var.project_id
   region = var.region
-  name             = "postgres-instance"
+  name             = var.db_instance_name
   database_version = "POSTGRES_15"
   root_password = random_string.db_password.result
   
@@ -18,6 +18,7 @@ resource "google_sql_database_instance" "postgres_db" {
     ip_configuration {
       ipv4_enabled = true
 
+      # For all Datastream IPs: https://cloud.google.com/datastream/docs/ip-allowlists-and-regions
       authorized_networks {
         name = "datastream"
         value = "104.199.6.64/32"

@@ -6,6 +6,10 @@ variable "region" {
   description = "The region to deploy to"
 }
 
+variable "db_instance_name" {
+  description = "The name of the PostgreSQL instance to create"
+}
+
 variable "postgresql_db" {
   description = "The name of the PostgreSQL database to create and replicate to BQ"
 }
